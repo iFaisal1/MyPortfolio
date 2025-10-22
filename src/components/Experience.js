@@ -29,9 +29,7 @@ const Experience = () => {
             <Briefcase className="w-10 h-10" />
              Experience
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Building scalable solutions and managing large-scale platforms
-          </p>
+
         </div>
 
         <div className="space-y-8">

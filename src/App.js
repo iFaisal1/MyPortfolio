@@ -24,12 +24,7 @@ function App() {
             </div>
             
             <div className="flex justify-center gap-6 mb-6 flex-wrap">
-              <a 
-                href="mailto:pd9@outlook.sa"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-              >
-                Email
-              </a>
+ 
               <a 
                 href="https://www.linkedin.com/in/faisalal-mutairi/"
                 target="_blank"
@@ -44,7 +39,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                X (Twitter)
+                X 
               </a>
               <a 
                 href="https://github.com/ifaisal1"

@@ -55,9 +55,7 @@ const Projects = () => {
             <FolderOpen className="w-10 h-10" />
             Featured Projects
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Building automation tools that serve thousands of users across multiple platforms
-          </p>
+ 
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
