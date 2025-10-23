@@ -11,7 +11,7 @@ const Experience = () => {
       type: "Full Stack Development",
       description: "Developed a high complexity Arabic game server achieving top 3 ranking on CFX platform. Successfully scaled the infrastructure to support 1,800+ concurrent players and 15,000+ daily active users, making it one of the largest servers on the platform.",
       achievements: [
-        "Architected and deployed scalable server infrastructure supporting 1,800+ concurrent players",
+        "Architected and deployed scalable server infrastructure supporting 1,800+ concurrent players from 200 players in 2023",
         "Achieved 15,000+ daily active users with optimal performance and stability",
         "Ranked in top 3 game servers on CFX platform",
         "Developed game mechanics and server-side logic using LUA & JS scripting"
