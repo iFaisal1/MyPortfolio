@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import About from './components/About';
-import Experience from './components/Experience';
 import Projects from './components/Projects';
 
 function App() {
@@ -11,8 +10,7 @@ function App() {
       <main>
         <About />
         <Projects />
-        <Experience />
-      </main>
+       </main>
       
       {/* Footer */}
       <footer className="py-12 bg-gray-900 border-t border-gray-800">
