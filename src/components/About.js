@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Code, Zap, Rocket } from 'lucide-react';
+import { User } from 'lucide-react';
 
 const About = () => {
  
