@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { MapPin, Github, Linkedin, Twitter } from 'lucide-react';
 
 const Header = () => {
   return (
