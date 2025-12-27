@@ -3,6 +3,28 @@ import { FolderOpen, ExternalLink, Users,MessageSquare,Calendar } from 'lucide-r
 const Projects = () => {
   const projects = [
     {
+      title: "Suhol",
+      subtitle: "AI-Powered Project Management",
+      description: "Working as a Software Engineer on Suhol, an AI-powered project management platform. Building scalable solutions and implementing core features using modern web technologies. The platform is deployed and actively serving 100+ users, helping teams manage projects more efficiently with AI assistance.",
+      technologies: ["Docker", "Nuxt.js", "Vue.js", "Supabase"],
+      platform: "Web Platform",
+      stats: { users: "100+" },
+      liveLink: "https://suhol.ai",
+      since: "2025",
+      untilNow: true
+    },
+    {
+      title: "PlaneBot",
+      subtitle: "Discord Server Management Bot",
+      description: "Full Stack Developer on PlaneBot, a Discord management bot serving 500+ servers and 300,000+ members. Architected and deployed a full-stack dashboard using Next.js and a normalized MySQL schema, utilizing Zod for runtime validation to ensure type safety and prevent injection risks. Optimized system performance by integrating a Redis caching layer and Next.js ISR, reducing database load and achieving sub-second response times for dashboards. Developed a high-performance UI with shadcn/ui and Tailwind CSS, featuring real-time server statistics, aggregated analytics, and modular settings panels for seamless server management.",
+      technologies: ["Next.js", "Node.js", "MySQL", "Redis", "Zod"],
+      platform: "Web dashboard",
+      stats: { servers: "500+", users: "50K+" },
+      liveLink: "https://planebot.xyz",
+      since: "2025",
+      untilNow: true
+    },
+    {
       title: "Academic Semester Countdown Bot",
       description: "Developed an automated social media bot that provides daily visual progress tracking for academic semester completion. The bot posts daily updates featuring progress bar visualization showing semester completion percentage, remaining days countdown with precise calculations, weekly progress indicators and milestone tracking, and clean, minimalist design for easy readability.",
       technologies: ["Node.js", "X API", "Automation"],
@@ -10,17 +32,6 @@ const Projects = () => {
       stats: { users: "2.3k+" },
       liveLink: "https://x.com/timer_uj",
       since: "2023",
-      untilNow: true
-    },
-    {
-      title: "PlaneBot",
-      subtitle: "Discord Server Management Bot",
-      description: "PlaneBot is a Discord management bot that helps over 500+ Discord servers and 300,000+ members automate moderation, ticketing, and logging through an easy-to-use web dashboard. Built with Node.js and SQL, it provides comprehensive server management tools for Discord communities.",
-      technologies: ["Node.js", "Discord.js", "SQL", "Web Dashboard"],
-      platform: "Discord",
-      stats: { servers: "500+", users: "300K+" },
-      liveLink: "https://planebot.xyz",
-      since: "2024",
       untilNow: true
     },
     {
@@ -33,25 +44,14 @@ const Projects = () => {
       liveLink: "https://t.me/MezlaBot",
       since: "2021",
       untilNow: true
-    },
-    {
-      title: "Nahj Project",
-      subtitle: "Website + Mobile App",
-      description: "A comprehensive scheduling solution designed to help students manage their academic schedules efficiently. The platform includes both a web application and mobile app, providing students with easy access to their timetables, assignments, and academic planning tools across all devices.",
-      technologies: ["React", "React Native", "Node.js", "Larvel", "MySQL"],
-      platform: "Web & Mobile",
-      status: "In Development",
-      isComingSoon: true,
-      since: "2025",
-      untilNow: true
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-800">
+    <section id="projects" className="py-20 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-400 mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-4xl font-bold text-green-600 mb-4 flex items-center justify-center gap-3">
             <FolderOpen className="w-10 h-10" />
             Featured Projects
           </h2>
@@ -62,50 +62,53 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 flex flex-col"
+              className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-green-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/10 hover:-translate-y-1 flex flex-col"
             >
               {/* Header */}
-              <div className="bg-gray-800 border-b border-gray-700 p-6">
+              <div className="bg-gray-50 border-b border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-blue-400 text-sm font-medium">{project.platform}</span>
+                  <span className="text-green-600 text-sm font-medium">{project.platform}</span>
                   <div className="flex items-center gap-3">
                     {project.status && (
-                      <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs font-medium border border-yellow-500/30">
+                      <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium border border-yellow-300">
                         {project.status}
                       </span>
                     )}
                     {project.stats && (
-                      <div className="flex items-center gap-2 text-blue-400 text-sm">
-                        <Users className="w-4 h-4" />
-                        <span>{project.stats.users}</span>
-                        {project.stats.servers && (
-                          <>
-                        <MessageSquare className="w-4 h-4" />
-                        <span>{project.stats.servers}</span>
-                        </>
+                      <div className="flex items-center gap-3 text-green-600 text-sm flex-wrap">
+                        {project.stats.users && (
+                          <div className="flex items-center gap-1">
+                            <Users className="w-4 h-4" />
+                            <span>{project.stats.users}</span>
+                          </div>
                         )}
-
+                        {project.stats.servers && (
+                          <div className="flex items-center gap-1">
+                            <MessageSquare className="w-4 h-4" />
+                            <span>{project.stats.servers}</span>
+                          </div>
+                        )}
                         {project.since && (
-                          <>
-                          <Calendar className="w-4 h-4"   />
-                          <span>{project.since} - {project.untilNow ? "Present" : project.untilNow}</span>
-                          </>
+                          <div className="flex items-center gap-1">
+                            <Calendar className="w-4 h-4" />
+                            <span>{project.since} - {project.untilNow ? "Present" : ""}</span>
+                          </div>
                         )}
                       </div>
                     )}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">
                   {project.title}
                 </h3>
                 {project.subtitle && (
-                  <p className="text-gray-400 text-sm">{project.subtitle}</p>
+                  <p className="text-gray-600 text-sm">{project.subtitle}</p>
                 )}
               </div>
 
               {/* Content */}
               <div className="p-6 flex-grow flex flex-col">
-                <p className="text-gray-400 mb-6 leading-relaxed flex-grow">
+                <p className="text-gray-700 mb-6 leading-relaxed flex-grow">
                   {project.description}
                 </p>
                 
@@ -114,7 +117,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
-                      className="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-lg text-sm border border-blue-500/30"
+                      className="bg-green-50 text-green-700 px-3 py-1.5 rounded-lg text-sm border border-green-200"
                     >
                       {tech}
                     </span>
@@ -123,7 +126,7 @@ const Projects = () => {
                 
                 {/* Link or Coming Soon */}
                 {project.isComingSoon ? (
-                  <div className="flex items-center justify-center gap-2 bg-gray-800 border border-gray-700 text-gray-400 px-6 py-3 rounded-lg font-semibold">
+                  <div className="flex items-center justify-center gap-2 bg-gray-100 border border-gray-300 text-gray-600 px-6 py-3 rounded-lg font-semibold">
                     <span>Coming Soon</span>
                   </div>
                 ) : (
@@ -131,7 +134,7 @@ const Projects = () => {
                     href={project.liveLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold"
+                    className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-all duration-300 font-semibold"
                   >
                     <ExternalLink className="w-5 h-5" />
                     <span>Visit Project</span>

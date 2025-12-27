@@ -5,27 +5,22 @@ const About = () => {
  
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section id="about" className="py-20 bg-white scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-400 mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-4xl font-bold text-green-600 mb-4 flex items-center justify-center gap-3">
             <User className="w-10 h-10" />
             About Me
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto">
           {/* Main About Text */}
-          <div className="bg-gray-800 border border-gray-700 rounded-xl p-8">
-            <p className="text-xl leading-relaxed text-gray-300 mb-6">
-              I'm a developer who enjoys exploring all kinds of technologies and building creative solutions. Since 2016, I've been on a journey with code, working with everything from scripting and backend development.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-300">
-              Currently in my 4th year of Software Engineering at Jeddah University (4/5), I focus on creating practical applications and automation tools. I work with various technologies including <span className="text-blue-400 font-medium">Node.js</span>, <span className="text-blue-400 font-medium">Next.js</span>, <span className="text-blue-400 font-medium">MongoDB</span>, <span className="text-blue-400 font-medium">MySQL</span>, and <span className="text-blue-400 font-medium">Linux</span>. I'm passionate about learning new frameworks and building solutions that make a difference.
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 hover:border-green-500/50 transition-all duration-300">
+            <p className="text-lg leading-relaxed text-gray-700">
+              Software Engineering student at the University of Jeddah. Practical experience in full-stack development, first with <span className="text-green-600 font-medium">Suhol.ai</span>, where I built a multi-stage AI prompt strategy to fix generation failures and make the system more reliable. Also developed <span className="text-green-600 font-medium">PlaneBot</span> dashboard, serving 50,000+ users across 500 servers by using <span className="text-green-600 font-medium">Redis</span> and <span className="text-green-600 font-medium">Next.js ISR</span> to ensure high performance. I like to use <span className="text-green-600 font-medium">Next.js</span>, <span className="text-green-600 font-medium">Nuxt.js</span>, and <span className="text-green-600 font-medium">Supabase</span> to create functional and fast applications.
             </p>
           </div>
-
- 
         </div>
       </div>
     </section>
