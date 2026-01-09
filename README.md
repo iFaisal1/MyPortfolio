@@ -1,1 +1,1 @@
-# Link: https://ifaisal.info
+# Preview: https://ifaisal.net
