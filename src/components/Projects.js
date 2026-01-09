@@ -6,7 +6,7 @@ const Projects = () => {
       title: "Suhol",
       subtitle: "AI-Powered Project Management",
       description: "Working as a Software Engineer on Suhol, an AI-powered project management platform. Building scalable solutions and implementing core features using modern web technologies. The platform is deployed and actively serving 100+ users, helping teams manage projects more efficiently with AI assistance.",
-      technologies: ["Docker", "Nuxt.js", "Vue.js", "Supabase"],
+      technologies: ["Docker", "Nuxt.js", "Vue.js"],
       platform: "Web Platform",
       stats: { users: "100+" },
       liveLink: "https://suhol.ai",
@@ -14,12 +14,29 @@ const Projects = () => {
       untilNow: true
     },
     {
+      title: "Boleto Server CFX.re",
+      subtitle: "Lead Server Script Developer & Systems Architect",
+      description: `Designed, developed, and optimized a custom FiveM (GTA V) server infrastructure to maximize performance, scalability, and security for a large-scale multiplayer community, evolving capacity from 
+400 concurrent players (2024) to 
+1,800+ concurrent players (2026) with systems handling peaks of 
+3,000
++
+3,000+ players in the connection queue, engineering core server scripts to reduce network latency and traffic by eliminating client-server bottlenecks, implementing protections against code injection, XSS, and SQL injection to safeguard a user base of 
+250,000+ players, and building the entire system around scalability, maintainability, and performance-oriented design patterns.`,
+      technologies: ["Lua", "Node.js", "MySQL", "Redis", "MongoDB", "Express.js"],
+      platform: "CFX.re Game server",
+      stats: {  users: "250K+" },
+      liveLink: "https://servers.fivem.net/servers/detail/loydpv",
+      since: "2023",
+      untilNow: true
+    },
+    {
       title: "PlaneBot",
       subtitle: "Discord Server Management Bot",
-      description: "Full Stack Developer on PlaneBot, a Discord management bot serving 500+ servers and 300,000+ members. Architected and deployed a full-stack dashboard using Next.js and a normalized MySQL schema, utilizing Zod for runtime validation to ensure type safety and prevent injection risks. Optimized system performance by integrating a Redis caching layer and Next.js ISR, reducing database load and achieving sub-second response times for dashboards. Developed a high-performance UI with shadcn/ui and Tailwind CSS, featuring real-time server statistics, aggregated analytics, and modular settings panels for seamless server management.",
+      description: "Full Stack Developer on PlaneBot, a Discord management bot serving 500+ servers and 300,000+ members. Architected and deployed a full-stack dashboard using Next.js and a MySQL, utilizing Zod for runtime validation to ensure type safety and prevent injection risks. Optimized system performance by integrating a Redis caching layer and Next.js ISR, reducing database load and achieving sub-second response times for dashboards. Developed a UI with shadcn/ui and Tailwind CSS, featuring real-time server statistics, aggregated analytics, and modular settings panels for seamless server management.",
       technologies: ["Next.js", "Node.js", "MySQL", "Redis", "Zod"],
       platform: "Web dashboard",
-      stats: { servers: "500+", users: "50K+" },
+      stats: { servers: "600+", users: "50K+" },
       liveLink: "https://planebot.xyz",
       since: "2025",
       untilNow: true

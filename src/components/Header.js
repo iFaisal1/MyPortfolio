@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { MapPin, Github, Linkedin, Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +17,31 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleNavClick = (item) => {
+    if (item.id === 'blogs') {
+      navigate('/blogs');
       setIsMobileMenuOpen(false);
+    } else {
+      scrollToSection(item.id);
     }
   };
 
@@ -26,6 +50,8 @@ const Header = () => {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
+    { id: 'blogs', label: 'Blogs' },
+
   ];
 
   return (
@@ -38,7 +64,15 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <button
-                onClick={() => scrollToSection('home')}
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    const element = document.getElementById('home');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                }}
                 className="text-xl font-bold text-green-600 hover:text-green-700 transition-colors"
               >
                 Faisal AlMutairi
@@ -50,7 +84,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item)}
                   className="text-gray-700 hover:text-green-600 transition-colors font-medium"
                 >
                   {item.label}
@@ -75,7 +109,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavClick(item)}
                   className="block w-full text-left text-gray-700 hover:text-green-600 transition-colors py-2"
                 >
                   {item.label}
@@ -125,7 +159,7 @@ const Header = () => {
               <span className="text-gray-700 group-hover:text-gray-900 transition-colors">@_21FL</span>
             </a>
             <a 
-              href="https://www.linkedin.com/in/faisalal-mutairi/" 
+              href="https://www.linkedin.com/in/ifaisal-swe/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex items-center gap-2 bg-gray-50 px-6 py-3 rounded-lg border border-gray-200 hover:bg-gray-100 transition-all duration-300 hover:scale-105"
